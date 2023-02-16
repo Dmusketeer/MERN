@@ -6,7 +6,6 @@ import "./App.css";
 const App = () => {
   return (
     <>
-      <h1> Hey! Dheeraj</h1>
       <Header />
       <TodoForm />
       <Todos />
