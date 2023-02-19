@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import { addNewTodos } from "../redux/actions/index";
+import { useDispatch } from "react-redux";
 
 const TodoForm = () => {
   const [value, setValue] = useState("");
-
-  const onFormSubmit = () => {};
+  const dispatch = useDispatch();
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    dispatch(addNewTodos(value));
+  };
 
   const onInputChange = (event) => {
     setValue(event.target.value);
@@ -16,7 +21,6 @@ const TodoForm = () => {
           placeholder="Add a Todo to get started..."
           className="input"
           onChange={onInputChange}
-          autofocus
         />
       </form>
     </>
